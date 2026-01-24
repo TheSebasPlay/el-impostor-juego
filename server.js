@@ -15,9 +15,8 @@ const CATEGORIES = {
     "Personas del colegio": ["Alejandra Haya", "Isabella Ruiz", "Domenica Santos", "Andrea Alvarado", "Catalina Mosquera", "Valery Yanac", "Doña Pepa", "Sofia Rosell", "Fabiano Karbaum", "Antonella Hassinger"],
     "Profesor del colegio": ["Eric Luque", "Silvia Angles", "Alejandro Ruiz", "Coquis", "Amesquita", "Juan Pablo Avalos", "Jorge Castro", "Cabanillas", "Oscco", "Ivan Arcaya"],
     "Animales": ["León", "Elefante", "Delfín", "Pingüino", "Canguro", "Águila", "Tiburón", "Panda", "Gato", "Lobo"],
-    "Comida": ["Pizza", "Sushi", "Hamburguesa", "Tacos", "Pasta", "Ceviche", "Helado", "Pollo a la Brasa", "Ramen", "Lasagna"],
+    "Comida": ["Pizza", "Sushi", "Hamburguesa", "Tacos", "Pasta", "Ceviche", "Helado", "Pollo a la Brasa", "Alejandra Haya", "Lasagna"],
     "Marcas": ["Apple", "Nike", "Adidas", "Coca-Cola", "Samsung", "Disney", "Tesla", "Google", "Netflix", "Amazon"],
-    "Deportes": ["Fútbol", "Baloncesto", "Tenis", "Voleibol", "Natación", "Boxeo", "Fórmula 1", "Golf", "Rugby", "Béisbol"],
     "Cantantes Urbanos": ["Bad Bunny", "Karol G", "J Balvin", "Daddy Yankee", "Rauw Alejandro", "Feid", "Ozuna", "Anuel AA", "Bizarrap", "Myke Towers"]
 };
 
@@ -153,3 +152,4 @@ io.on('connection', (socket) => {
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
+
