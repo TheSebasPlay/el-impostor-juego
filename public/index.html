@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>El Impostor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="app-container">
+        
+        <section id="screen-home" class="screen active">
+            <div class="logo-area">
+                <i class="ph-duotone ph-detective icon-logo"></i>
+                <h1>El Impostor</h1>
+                <p>Juego de deducción social</p>
+            </div>
+            
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Tu nombre" maxlength="12">
+            </div>
+
+            <div class="actions">
+                <button id="btn-create-room" class="btn-primary">Crear Sala</button>
+                <div class="divider">o</div>
+                <div class="join-group">
+                    <input type="text" id="room-code-input" placeholder="Código" maxlength="4" style="text-transform:uppercase;">
+                    <button id="btn-join-room" class="btn-secondary">Unirse</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="screen-lobby" class="screen">
+            <div class="header-glass">
+                <div class="room-info">
+                    <span>CÓDIGO DE SALA</span>
+                    <h2 id="display-room-code">----</h2>
+                </div>
+            </div>
+
+            <div class="players-container">
+                <h3>Jugadores conectados</h3>
+                <ul id="players-list" class="players-list">
+                    </ul>
+            </div>
+
+            <div class="lobby-footer">
+                <p class="waiting-text">Esperando al host...</p>
+                <button id="btn-start-game" class="btn-primary hidden">Iniciar Partida</button>
+            </div>
+        </section>
+
+        <section id="screen-game" class="screen">
+            <div class="game-card">
+                <div class="category-pill">
+                    <span id="game-category">Categoría</span>
+                </div>
+
+                <div class="role-reveal">
+                    <div id="view-innocent" class="role-view">
+                        <p class="role-label">La palabra secreta es</p>
+                        <h1 id="secret-word" class="word-reveal">...</h1>
+                        <p class="role-desc">Encuentra al impostor.</p>
+                    </div>
+
+                    <div id="view-impostor" class="role-view hidden">
+                        <div class="impostor-icon">🤫</div>
+                        <h1 class="impostor-title">ERES EL IMPOSTOR</h1>
+                        <p class="role-desc">Finge que sabes la palabra.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button id="btn-new-game" class="btn-secondary hidden">Jugar otra vez</button>
+        </section>
+
+    </main>
+
+    <div id="toast" class="toast hidden">Mensaje de error</div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
