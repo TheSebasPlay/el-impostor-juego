@@ -12,16 +12,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // --- BASE DE DATOS DE PALABRAS ---
 const CATEGORIES = {
-    "Animales": ["Elefante", "Jirafa", "Pingüino", "Delfín", "León", "Canguro", "Koala", "Ornitorrinco", "Camaleón", "Panda", "Tiburón", "Águila", "Murciélago", "Pulpo", "Lobo", "Oso Polar", "Hámster", "Serpiente", "Loro", "Castor"],
-    "Países": ["Japón", "Brasil", "Egipto", "Canadá", "Australia", "Italia", "México", "Rusia", "India", "Francia", "Alemania", "Argentina", "Perú", "China", "España", "Grecia", "Turquía", "Tailandia", "Sudáfrica", "Noruega"],
-    "Comida": ["Pizza", "Sushi", "Hamburguesa", "Tacos", "Paella", "Helado", "Chocolate", "Espagueti", "Ensalada", "Curry", "Ceviche", "Croissant", "Arepa", "Ramen", "Lasagna", "Burrito", "Pancakes", "Donas", "Empanada", "Queso"],
-    "Profesiones": ["Médico", "Bombero", "Astronauta", "Profesor", "Policía", "Chef", "Programador", "Abogado", "Piloto", "Arquitecto", "Músico", "Electricista", "Dentista", "Veterinario", "Carpintero", "Fotógrafo", "Científico", "Actor", "Periodista", "Mecánico"],
-    "Objetos de Casa": ["Sofá", "Refrigerador", "Microondas", "Lámpara", "Espejo", "Cama", "Televisor", "Licuadora", "Mesa", "Silla", "Reloj", "Almohada", "Cortina", "Escoba", "Toalla", "Sartén", "Plancha", "Ventilador", "Maceta", "Llave"],
-    "Películas/Géneros": ["Terror", "Comedia", "Ciencia Ficción", "Acción", "Romance", "Titanic", "Star Wars", "Harry Potter", "El Padrino", "Avatar", "Jurassic Park", "El Rey León", "Matrix", "Avengers", "Frozen", "Shrek", "Batman", "Coco", "Joker", "Rocky"],
-    "Deportes": ["Fútbol", "Baloncesto", "Tenis", "Natación", "Voleibol", "Béisbol", "Golf", "Boxeo", "Rugby", "Atletismo", "Ciclismo", "Surf", "Esgrima", "Karate", "Hockey", "Esquí", "Gimnasia", "Padel", "Escalada", "Automovilismo"],
-    "Instrumentos": ["Guitarra", "Piano", "Batería", "Violín", "Flauta", "Saxofón", "Trompeta", "Arpa", "Ukelele", "Bajo", "Acordeón", "Clarinete", "Maracas", "Xilófono", "Oboe", "Trombón", "Gaita", "Cello", "Banjo", "Teclado"],
-    "Marcas": ["Apple", "Nike", "Coca-Cola", "Samsung", "McDonalds", "Disney", "Amazon", "Tesla", "Adidas", "Google", "Netflix", "Lego", "Starbucks", "IKEA", "Toyota", "Sony", "Pepsi", "Microsoft", "Gucci", "Spotify"],
-    "Personajes Históricos": ["Einstein", "Napoleón", "Cleopatra", "Shakespeare", "Da Vinci", "Mozart", "Picasso", "Frida Kahlo", "Gandhi", "Mandela", "Colón", "Newton", "Beethoven", "Darwin", "Marie Curie", "Lincoln", "Elvis", "Marilyn Monroe", "Chaplin", "Armstrong"]
+    "Personas del colegio": ["Alejandra Haya", "Isabella Ruiz", "Domenica Santos", "Andrea Alvarado", "Catalina Mosquera", "Valery Yanac", "Doña Pepa", "Sofia Rosell", "Fabiano Karbaum", "Antonella Hassinger"],
+    "Profesor del colegio": ["Eric Luque", "Silvia Angles", "Alejandro Ruiz", "Coquis", "Amesquita", "Juan Pablo Avalos", "Jorge Castro", "Cabanillas", "Oscco", "Ivan Arcaya"],
+    "Animales": ["León", "Elefante", "Delfín", "Pingüino", "Canguro", "Águila", "Tiburón", "Panda", "Gato", "Lobo"],
+    "Comida": ["Pizza", "Sushi", "Hamburguesa", "Tacos", "Pasta", "Ceviche", "Helado", "Pollo a la Brasa", "Ramen", "Lasagna"],
+    "Marcas": ["Apple", "Nike", "Adidas", "Coca-Cola", "Samsung", "Disney", "Tesla", "Google", "Netflix", "Amazon"],
+    "Deportes": ["Fútbol", "Baloncesto", "Tenis", "Voleibol", "Natación", "Boxeo", "Fórmula 1", "Golf", "Rugby", "Béisbol"],
+    "Cantantes Urbanos": ["Bad Bunny", "Karol G", "J Balvin", "Daddy Yankee", "Rauw Alejandro", "Feid", "Ozuna", "Anuel AA", "Bizarrap", "Myke Towers"]
 };
 
 // --- ESTADO DEL JUEGO ---
@@ -154,4 +151,5 @@ io.on('connection', (socket) => {
 });
 
 const PORT = process.env.PORT || 3000;
+
 server.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
