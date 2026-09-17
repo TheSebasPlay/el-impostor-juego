@@ -82,8 +82,8 @@ io.on('connection', (socket) => {
 
         // Lógica de juego
         const playerIds = room.players.map(p => p.id);
-        if (playerIds.length < 3) {
-            socket.emit('error', 'Se necesitan al menos 3 jugadores.');
+        if (playerIds.length < 2) {
+            socket.emit('error', 'Se necesitan al menos 2 jugadores.');
             return;
         }
 
